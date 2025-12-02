@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SIC Alpha – Marchés & actualités</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="navbar">
+        <div class="navbar-inner">
+          <div class="brand">
+            <div class="brand-pill">SIC Alpha</div>
+            <div class="brand-meta">
+              <div class="brand-title">Student Investment Club</div>
+              <div class="brand-sub">Board marchés & crypto labo</div>
+            </div>
+          </div>
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="simulations.html" class="nav-link">Simulations</a>
+            <a href="markets.html" class="nav-link active">Marchés & news</a>
+            <a href="assistant.html" class="nav-link">Assistant</a>
+            <a href="sic-alpha.html" class="nav-link">SIC Alpha</a>
+            <a href="workshops.html" class="nav-link">Workshops</a>
+            <a href="newsletter.html" class="nav-link">Newsletter</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="container">
+          <header class="page-header">
+            <div class="page-kicker">Board marchés</div>
+            <h1 class="page-title">Indices, crypto labo & actualités macro.</h1>
+            <p class="page-subtitle">
+              L’objectif est de travailler une lecture structurée des marchés : indices suivis,
+              poche expérimentale (crypto labo) et sélection d’actualités macro. Pas de signaux
+              de trading, mais une grille de compréhension.
+            </p>
+          </header>
+
+          <section class="panel markets-layout">
+            <div>
+              <div class="panel-header">
+                <div class="panel-title">Univers suivi</div>
+                <div class="panel-meta">Indices & actifs principaux (maquette)</div>
+              </div>
+
+              <table class="assets-table">
+                <thead>
+                  <tr>
+                    <th>Actif</th>
+                    <th>Cours</th>
+                    <th>Var. jour</th>
+                  </tr>
+                </thead>
+                <tbody id="assets-body"></tbody>
+              </table>
+              <p style="margin-top: 0.5rem; font-size: 0.78rem; color: var(--text-muted)">
+                Données illustratives. Plus tard, ce tableau pourra être alimenté par une API de
+                données de marché (indices & crypto) pour un suivi en temps quasi réel.
+              </p>
+            </div>
+
+            <div>
+              <div class="panel">
+                <div class="panel-header">
+                  <div class="panel-title">Focus actif</div>
+                  <div class="panel-meta">Lecture SIC Alpha</div>
+                </div>
+                <h2 id="asset-name" style="font-size: 1.05rem; margin-bottom: 0.2rem"></h2>
+                <p
+                  id="asset-type"
+                  style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem"
+                ></p>
+
+                <div class="portfolio-meta" style="margin-bottom: 0.8rem">
+                  <div class="meta-row">
+                    <span>Cours simulé :</span>
+                    <strong id="asset-price">–</strong>
+                  </div>
+                  <div class="meta-row">
+                    <span>Variation jour :</span>
+                    <strong id="asset-change">–</strong>
+                  </div>
+                </div>
+
+                <canvas id="marketChart" height="130"></canvas>
+              </div>
+
+              <div class="panel" style="margin-top: 1rem">
+                <div class="panel-header">
+                  <div class="panel-title">Actualités</div>
+                  <div class="panel-meta">Sélection macro, politique & marchés</div>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-muted)">
+                  Cette section peut, à terme, être alimentée par une API de news économiques et
+                  financières (presse spécialisée). L’idée n’est pas de donner des signaux de
+                  trading, mais de relier décisions de banques centrales, annonces budgétaires et
+                  mouvements d’indices.
+                </p>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <span>SIC Alpha – Student Investment Club.</span>
+          <span>Lecture macro & marchés à des fins pédagogiques.</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
