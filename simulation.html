@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SIC Alpha – Simulations d’investissement</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="navbar">
+        <div class="navbar-inner">
+          <div class="brand">
+            <div class="brand-pill">SIC Alpha</div>
+            <div class="brand-meta">
+              <div class="brand-title">Student Investment Club</div>
+              <div class="brand-sub">Simulations d’investissement</div>
+            </div>
+          </div>
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="simulations.html" class="nav-link active">Simulations</a>
+            <a href="markets.html" class="nav-link">Marchés & news</a>
+            <a href="assistant.html" class="nav-link">Assistant</a>
+            <a href="sic-alpha.html" class="nav-link">SIC Alpha</a>
+            <a href="workshops.html" class="nav-link">Workshops</a>
+            <a href="newsletter.html" class="nav-link">Newsletter</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="container">
+          <header class="page-header">
+            <div class="page-kicker">Simulations</div>
+            <h1 class="page-title">Tester horizon, versements et scénarios.</h1>
+            <p class="page-subtitle">
+              L’idée n’est pas de prédire l’avenir, mais de comprendre comment capital initial,
+              versements réguliers, horizon de placement et hypothèses de rendement interagissent.
+            </p>
+          </header>
+
+          <section class="panel form-grid">
+            <form id="sim-form">
+              <div class="panel-header">
+                <div class="panel-title">Paramètres</div>
+                <div class="panel-meta">Simulation d’investissement</div>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="capital">Capital de départ</label>
+                <input class="input" id="capital" type="number" placeholder="Ex : 2000" />
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="monthly">Versement mensuel</label>
+                <input class="input" id="monthly" type="number" placeholder="Ex : 150" />
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="years">Horizon de placement (années)</label>
+                <input class="input" id="years" type="number" placeholder="Ex : 10" />
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="rate">
+                  Rendement annuel estimé (scénario médian, en %)
+                </label>
+                <input class="input" id="rate" type="number" step="0.1" placeholder="Ex : 5" />
+              </div>
+
+              <button class="btn btn-primary" type="submit">Lancer la simulation</button>
+              <p style="margin-top: 0.6rem; font-size: 0.78rem; color: var(--text-muted)">
+                Le calcul est basé sur des intérêts composés mensuels à partir des hypothèses
+                saisies. Trois scénarios (pessimiste / médian / optimiste) sont générés autour du
+                rendement médian.
+              </p>
+            </form>
+
+            <div>
+              <div class="panel-header">
+                <div class="panel-title">Résultats</div>
+                <div class="panel-meta">Trois scénarios de trajectoire</div>
+              </div>
+
+              <div class="results-grid">
+                <div class="result-card">
+                  <div class="result-label">Scénario pessimiste</div>
+                  <div class="result-values">
+                    <span>Total versé : <strong id="pess-invested">–</strong></span>
+                    <span>Valeur projetée : <strong id="pess-value">–</strong></span>
+                    <span>Part de performance : <strong id="pess-perf">–</strong></span>
+                  </div>
+                </div>
+
+                <div class="result-card">
+                  <div class="result-label">Scénario médian</div>
+                  <div class="result-values">
+                    <span>Total versé : <strong id="med-invested">–</strong></span>
+                    <span>Valeur projetée : <strong id="med-value">–</strong></span>
+                    <span>Part de performance : <strong id="med-perf">–</strong></span>
+                  </div>
+                </div>
+
+                <div class="result-card">
+                  <div class="result-label">Scénario optimiste</div>
+                  <div class="result-values">
+                    <span>Total versé : <strong id="opt-invested">–</strong></span>
+                    <span>Valeur projetée : <strong id="opt-value">–</strong></span>
+                    <span>Part de performance : <strong id="opt-perf">–</strong></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="panel">
+                <div class="panel-header">
+                  <div class="panel-title">Courbe synthétique</div>
+                  <div class="panel-meta">Évolution du portefeuille</div>
+                </div>
+                <canvas id="simChart" height="140"></canvas>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <span>SIC Alpha – Student Investment Club.</span>
+          <span>Simulation pédagogique, non contractuelle.</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
